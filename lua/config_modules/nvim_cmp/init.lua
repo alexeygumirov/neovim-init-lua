@@ -1,0 +1,98 @@
+local cmp = require('cmp')
+local lspkind = require('lspkind')
+
+cmp.setup({
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+    end,
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    winhighlight = "Normal:#51A266,NormalNC:#0C0C0C",
+  },
+  formatting = {
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+  },
+  experimental = {
+      native_menu = false,
+      ghost_text = true,
+  },
+  mapping = {
+    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+    -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
+  },
+  sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        -- { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'luasnip' }, -- For luasnip users.
+        { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+        { name = 'path' },
+    }, {
+        { name = 'buffer' },
+    }, {
+        { name = 'cmdline' }
+    })
+})
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline('/', {
+--   sources = {
+--     { name = 'buffer' }
+--   }
+-- })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    -- completion = { autocomplete = false },
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = "Normal:#51A266,NormalNC:#0C0C0C",
+    },
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+})
+
+  -- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  -- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig')['cssls'].setup({
+  capabilities = capabilities
+})
+require('lspconfig')['gopls'].setup({
+  capabilities = capabilities
+})
+require('lspconfig')['pylsp'].setup({
+  capabilities = capabilities
+})
+require('lspconfig')['html'].setup({
+  capabilities = capabilities
+})
+
+vim.cmd([[
+    autocmd FileType * lua require('cmp').setup.buffer { enabled = false }
+    autocmd FileType python lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType markdown lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType javascript lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType sh lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType go lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType vim lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
+]])

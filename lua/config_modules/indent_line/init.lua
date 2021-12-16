@@ -1,0 +1,23 @@
+-- vim.g.indentLine_char                    = "|"
+vim.g.indentLine_char_list               = { "|", "¦", "┆", "┊" }
+vim.g.indentLine_concealcursor           = "ic"
+vim.g.indentLine_leadingSpaceChar        = "·"
+vim.g.indentLine_leadingSpaceEnabled     = 0
+vim.g.indentLine_enabled                 = 0
+
+vim.cmd[[
+    autocmd FileType json let g:indentLine_enabled=1
+    autocmd FileType json let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType sh let g:indentLine_enabled=1
+    autocmd FileType sh let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType python let g:indentLine_enabled=1
+    autocmd FileType python let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType go let g:indentLine_enabled=1
+    autocmd FileType go let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType vim let g:indentLine_enabled=1
+    autocmd FileType vim let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType yaml let g:indentLine_enabled=1
+    autocmd FileType yaml let g:indentLine_leadingSpaceEnabled = 1
+]]
+-- autocmd FileType markdown let g:indentLine_enabled=1
+-- autocmd FileType vimwiki let g:indentLine_enabled=1
