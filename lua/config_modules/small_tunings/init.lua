@@ -81,11 +81,11 @@ M.json_warnings_toggle = function()
 
     if vim.g.vim_json_warnings == 0 and changed == false then
         vim.g.vim_json_warnings = 1
-        vim.cmd('redraw!')
+        vim.cmd('redrawt')
         changed = true
     else
         vim.g.vim_json_warnings = 0
-        vim.cmd('redraw!')
+        vim.cmd('redrawt')
         changed = true
     end
 

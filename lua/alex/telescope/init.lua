@@ -42,7 +42,7 @@ M.git_branches = function()
     }
     if ret == 0 then
         builtin.git_branches({ cwd = utils.buffer_dir() })
-        vim.cmd('redraw!')
+        vim.cmd('redrawt')
     end
 end
 

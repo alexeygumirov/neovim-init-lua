@@ -18,7 +18,7 @@ M.vimwiki_pull = function()
     
     vim.cmd('cd ~/vimwiki')
     vim.cmd('Git pull')
-    vim.cmd('redraw!')
+    vim.cmd('redrawt')
 
 end
 
@@ -30,7 +30,7 @@ M.vimwiki_push = function()
     vim.cmd('Git add .')
     vim.cmd('Git commit -m ' .. '"update from Home laptop ' .. timestamp .. '"')
     vim.cmd('Git push')
-    vim.cmd('redraw!')
+    vim.cmd('redrawt')
 
 end
 
