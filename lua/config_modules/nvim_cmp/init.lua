@@ -84,6 +84,12 @@ require('lspconfig')['pylsp'].setup({
 require('lspconfig')['html'].setup({
   capabilities = capabilities
 })
+require('lspconfig').sumneko_lua.setup({
+  capabilities = capabilities
+})
+require('lspconfig').terraformls.setup({
+  capabilities = capabilities
+})
 
 vim.cmd([[
     autocmd FileType * lua require('cmp').setup.buffer { enabled = false }
@@ -95,4 +101,5 @@ vim.cmd([[
     autocmd FileType vim lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true }
 ]])
