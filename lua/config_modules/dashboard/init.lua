@@ -16,4 +16,4 @@ vim.g.dashboard_custom_section = {
     f = {description = {'  VimWiki                   SPC ww'}, command = 'VimwikiIndex'},
     g = {description = {'  Config                          '}, command = 'edit ~/.config/nvim/init.lua'},
 }
-vim.g.dashboard_custom_footer = {'Press F2 to call dashboard when needed.'}
+vim.g.dashboard_custom_footer = {'Press F2 to call dashboard'}
