@@ -24,20 +24,20 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
 
 ### Dashboard
 
-![Dashboard](screenshot/dashboard.png)]
+![Dashboard](screenshot/dashboard.png)
 
 ### Completions
 
-![Completion 1](screenshot/completion1.png)]
+![Completion 1](screenshot/completion1.png)
 
-![Completion 2](screenshot/completion2.png)]
+![Completion 2](screenshot/completion2.png)
 
-![Completion 3](screenshot/completion3.png)]
+![Completion 3](screenshot/completion3.png)
 
 ### Highlight
 
-![Python](screenshot/python_highlight.png)]
+![Python](screenshot/python_highlight.png)
 
-![Lua](screenshot/lua_highlight.png)]
+![Lua](screenshot/lua_highlight.png)
 
-![Markdown](screenshot/md_highlight.png)]
+![Markdown](screenshot/md_highlight.png)
