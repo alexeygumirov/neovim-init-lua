@@ -13,6 +13,9 @@ nmap('<leader>c','<cmd>lua require("config_modules.conceal").toggle_conceal()<CR
 ----------------------- CTags panel -------------------------------
 nmap('<leader>B', '<cmd>TagbarToggle<CR>')
 
+----------------------- Dashboard ---------------------------------
+nmap('<F2>', '<cmd>call dashboard#instance(0)<CR>')
+
 
 ----------------------- Indent Line -------------------------------
 nmap('<leader>ti', '<cmd>IndentLinesToggle<CR>')
@@ -72,6 +75,8 @@ nmap('<leader>ff', '<cmd>lua require("telescope.builtin").file_browser({ cwd = r
 -- Telescope: File Fuzzy Finders
 -- nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 nmap('<leader>fh', '<cmd>lua require("telescope.builtin").find_files({ cwd = "~/" })<CR>')
+-- Telescopt: Open Old Files
+nmap('<leader>fo', '<cmd>lua require("telescope.builtin").oldfiles()<CR>')
 -- Telescope: Git Fuzzy Finders
 nmap('<leader>gb', '<cmd>lua require("alex.telescope").git_branches()<CR>')
 nmap('<leader>gf', '<cmd>lua require("alex.telescope").find_files_or_git_files()<CR>')
@@ -141,6 +146,8 @@ nmap('<leader>tg', '<cmd>silent ! sh -c "grip % &"<CR>')
 nmap('<leader>td', '<cmd>silent ! bash -c "TmuxHugoPreview.sh -D -F && exit"<CR>')
 -- Hugo preview
 nmap('<leader>tp', '<cmd>silent ! bash -c "TmuxHugoPreview.sh && exit"<CR>')
+-- TreeSitter highlight toggle
+nmap('<leader>th', '<cmd>TSBufToggle highlight<CR>')
 -- Generate PDF from MD
 nmap('<leader>Mp', '<cmd>! bash -c "pdfgenerate -f %"<CR>')
 -- Generate DOCX from MD

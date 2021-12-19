@@ -7,9 +7,11 @@ require('config_modules.auto_pairs')                -- ~/.config/nvim/lua/config
 require('config_modules.colorizer')                 -- ~/.config/nvim/lua/config_modules/colorizer/init.lua
 require('config_modules.commentary')                -- ~/.config/nvim/lua/config_modules/commentary/init.lua
 require('config_modules.conceal')                   -- ~/.config/nvim/lua/config_modules/conceal/init.lua
+require('config_modules.dashboard')                 -- ~/.config/nvim/lua/config_modules/dashboard/init.lua
 require('config_modules.firenvim')                  -- ~/.config/nvim/lua/config_modules/firenvim/init.lua
 require('config_modules.floaterm')                  -- ~/.config/nvim/lua/config_modules/floaterm/init.lua
 require('config_modules.gitgutter')                 -- ~/.config/nvim/lua/config_modules/gitgutter/init.lua
+require('config_modules.glow')                      -- ~/.config/nvim/lua/config_modules/glow/init.lua
 require('config_modules.haskell_vim')               -- ~/.config/nvim/lua/config_modules/haskell_vim/init.lua
 require('config_modules.indent_line')               -- ~/.config/nvim/lua/config_modules/indent_line/init.lua
 require('config_modules.lf')                        -- ~/.config/nvim/lua/config_modules/lf/init.lua

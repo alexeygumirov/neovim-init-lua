@@ -53,4 +53,5 @@ vim.cmd([[
     autocmd Filetype haskell setlocal omnifunc=v:lua.vim.lsp.omnifunc
     autocmd Filetype yaml setlocal omnifunc=v:lua.vim.lsp.omnifunc
     autocmd Filetype terraform setlocal omnifunc=v:lua.vim.lsp.omnifunc
+    autocmd Filetype lua setlocal omnifunc=v:lua.vim.lsp.omnifunc
 ]])

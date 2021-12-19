@@ -45,7 +45,7 @@ M.sha1hash_date = function ()
 end
 
 M.spellcheck_toggle = function()
-    
+
     local changed = false
 
     if vim.o.spell == false and changed == false then

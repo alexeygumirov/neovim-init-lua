@@ -95,6 +95,7 @@ wk.register({
                 b  = "Switch buffers",
                 f  = "Telescope File browser",
                 h  = "FZF in the home folder",
+                o  = "Telescope Old files",
                 s  = "FZF in the current folder",
             },
             g = {
@@ -164,6 +165,7 @@ wk.register({
                 g  = "Grip preview of MD",
                 i  = "Toggle Indent Line",
                 j  = "Toggle JSON errors",
+                h  = "TreeSitter Highligh Toggle",
                 m  = "Table mode toggle",
                 s  = "Toggle leading Space",
                 d  = "Hugo pages draft preview",

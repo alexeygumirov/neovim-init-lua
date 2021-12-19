@@ -49,11 +49,11 @@ cmp.setup({
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline('/', {
---   sources = {
---     { name = 'buffer' }
---   }
--- })
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
@@ -102,4 +102,5 @@ vim.cmd([[
     autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType lua lua require('cmp').setup.buffer { enabled = true }
 ]])

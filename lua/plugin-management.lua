@@ -49,7 +49,7 @@ Plug('kyazdani42/nvim-web-devicons')
 -- Telescope
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim')
-Plug('nvim-telescope/telescope-fzf-native.nvim', { 
+Plug('nvim-telescope/telescope-fzf-native.nvim', {
     ['do'] = function()
         vim.cmd('make')
     end
@@ -80,5 +80,8 @@ Plug('glacambre/firenvim', {
         vim.fn['firenvim#install'](0)
     end
 })
+
+-- Startup screen
+Plug('glepnir/dashboard-nvim')
 
 vim.call('plug#end')
