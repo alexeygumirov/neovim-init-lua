@@ -12,7 +12,7 @@ nmap('<A-j>', '<C-w>j')
 nmap('<A-k>', '<C-w>k')
 nmap('<A-l>', '<C-w>l')
 
--- Resizing of splits Ctrl -  ,   ,  ,  
+-- Resizing of splits Ctrl -  ,   ,  , 
 nmap('<C-Left>', '<cmd>vertical resize -5<CR>')
 nmap('<C-Right>', '<cmd>vertical resize +5<CR>')
 nmap('<C-Up>', '<cmd>resize -2<CR>')
@@ -35,3 +35,7 @@ imap('<A-h>', '<C-\\><C-N><C-w>h')
 imap('<A-j>', '<C-\\><C-N><C-w>j')
 imap('<A-k>', '<C-\\><C-N><C-w>k')
 imap('<A-l>', '<C-\\><C-N><C-w>l')
+
+-- Sending last deleated symbol into Void buffer
+nmap('x', '"_x')
+nmap('X', '"_x')
