@@ -56,6 +56,7 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', {
 })
 Plug('nvim-telescope/telescope-fzf-writer.nvim')
 Plug('nvim-telescope/telescope-file-browser.nvim')
+Plug('fcying/telescope-ctags-outline.nvim')
 
 -- FZF
 Plug('junegunn/fzf', {

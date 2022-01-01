@@ -75,8 +75,10 @@ nmap('<leader>ff', '<cmd>lua require("telescope").extensions.file_browser.file_b
 -- Telescope: File Fuzzy Finders
 -- nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 nmap('<leader>fh', '<cmd>lua require("telescope.builtin").find_files({ cwd = "~/" })<CR>')
--- Telescopt: Open Old Files
+-- Telescope: Open Old Files
 nmap('<leader>fo', '<cmd>lua require("telescope.builtin").oldfiles()<CR>')
+-- Telescope: Ctags Outline
+nmap('<leader>fc', '<cmd>lua require("telescope").extensions.ctags_outline.outline()<CR>')
 -- Telescope: Git Fuzzy Finders
 nmap('<leader>gb', '<cmd>lua require("alex.telescope").git_branches()<CR>')
 nmap('<leader>gf', '<cmd>lua require("alex.telescope").find_files_or_git_files()<CR>')
