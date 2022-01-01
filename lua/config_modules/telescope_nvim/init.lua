@@ -10,7 +10,6 @@ require('telescope').setup({
             height = 0.9,
             width = 0.9,
             mirror = false,
-            preview_width = 0.5,
         },
         mappings = {
             i = {
