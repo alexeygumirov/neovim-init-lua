@@ -8,17 +8,22 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
 ## Key features
 
 - Structured config
-- **Papercolor** color scheme
+- [Papercolor](https://github.com/NLKNguyen/papercolor-theme) color scheme
 - LSP support:
     - Use of built in NeoVIM LSP client
     - `nvim-cmp` for completion.
     - `nvim-lspconfig` for LSP servers configurations.
-- Highlighting via **Treesitter**
-- Start up dashboard
-- Telescope and FZF for search
-- Lf
-- Floaterm
-- Firenvim support for integration with a Firefox (or Chrome).
+- Highlighting via [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Start up [Dashboard](https://github.com/glepnir/dashboard-nvim)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [FZF](https://github.com/junegunn/fzf.vim) for search
+- Integration with [Lf file manager](https://github.com/gokcehan/lf)
+- Floating terminal window via [Floaterm](https://github.com/voldikss/vim-floaterm)
+- [Firenvim](https://github.com/glacambre/firenvim) support for integration with a Firefox (or Chrome).
+- Status line and tab line with [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+- Indentation via [IndentLine](https://github.com/Yggdroot/indentLine)
+- [Auto paring](https://github.com/Yggdroot/indentLine) for brackets, quotations, tags and other defined patters
+- Gitgutter, Fugitive for working with Git.
+- VimWiki
 
 ## Screenshots
 
