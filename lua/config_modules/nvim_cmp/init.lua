@@ -7,7 +7,7 @@ cmp.setup({
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
       -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
     end,
   },
@@ -34,18 +34,18 @@ cmp.setup({
     -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
   },
-  sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        -- { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
-        { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
+  sources =  {
+        { name = 'vsnip' }, -- For vsnip users.
         { name = 'path' },
+        { name = 'nvim_lsp' },
+        -- { name = 'snippy' }, -- For snippy users.
+        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
     }, {
         { name = 'buffer' },
     }, {
         { name = 'cmdline' }
-    })
+    },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

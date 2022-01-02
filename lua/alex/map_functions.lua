@@ -15,6 +15,11 @@ M.vmap = function(lhs,rhs)
   vim.api.nvim_set_keymap('v', lhs, rhs, options)
 end
 
+M.smap = function(lhs,rhs)
+  local options = { noremap = true, silent = true }
+  vim.api.nvim_set_keymap('s', lhs, rhs, options)
+end
+
 M.tmap = function(lhs,rhs)
   local options = { noremap = true, silent = true }
   vim.api.nvim_set_keymap('t', lhs, rhs, options)

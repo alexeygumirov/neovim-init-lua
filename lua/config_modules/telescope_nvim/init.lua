@@ -89,8 +89,13 @@ require('telescope').setup({
         ctags_outline = {
             ctags = { 'ctags' },
             ft_opt = {
-                vim = '--vim-kinds=fk',
-                lua = '--lua-kinds=fk'
+                vim = '--kinds-vim=fmv',
+                lua = '--kinds-lua=f',
+                yaml = '--kinds-yaml=a',
+                python = '--kinds-python=fIv --language-force=Python',
+                ansibleplaybook = '--kinds-ansibleplaybook=p',
+                haskell = '--kinds-haskell=fmt',
+                sh = '--kinds-sh=afs',
             },
         },
     },

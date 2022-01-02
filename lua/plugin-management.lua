@@ -8,8 +8,11 @@ Plug('tpope/vim-surround')
 Plug('Yggdroot/indentLine')
 Plug('mhinz/vim-signify')
 Plug('tpope/vim-commentary')
-Plug('SirVer/ultisnips')
-Plug('honza/vim-snippets')
+-- Vsnip
+Plug('hrsh7th/vim-vsnip')
+Plug('hrsh7th/vim-vsnip-integ')
+Plug('rafamadriz/friendly-snippets')
+-- VimWiki
 Plug('vimwiki/vimwiki')
 -- { integration with lf
 Plug('rbgrouleff/bclose.vim')
@@ -34,10 +37,10 @@ Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
+Plug('hrsh7th/cmp-vsnip')
 Plug('neovim/nvim-lspconfig')
 Plug('ray-x/lsp_signature.nvim')
-Plug( 'onsails/lspkind-nvim')
-Plug('quangnguyen30192/cmp-nvim-ultisnips')
+Plug('onsails/lspkind-nvim')
 
 -- Motion
 Plug('phaazon/hop.nvim')

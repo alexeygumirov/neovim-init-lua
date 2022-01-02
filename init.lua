@@ -27,7 +27,7 @@ require('config_modules.table_mode')                -- ~/.config/nvim/lua/config
 require('config_modules.tabstops')                  -- ~/.config/nvim/lua/config_modules/tabstops/init.lua
 require('config_modules.telescope_nvim')            -- ~/.config/nvim/lua/config_modules/telescope_nvim/init.lua
 require('config_modules.treesitter')                -- ~/.config/nvim/lua/config_modules/treesitter/init.lua
-require('config_modules.ultisnips')                 -- ~/.config/nvim/lua/config_modules/ultisnips/init.lua
+require('config_modules.vsnip')                     -- ~/.config/nvim/lua/config_modules/vsnip/init.lua
 require('config_modules.vim_hop')                   -- ~/.config/nvim/lua/config_modules/vim_hop/init.lua
 require('config_modules.vim_lualine')               -- ~/.config/nvim/lua/config_modules/vim_lualine/init.lua
 require('config_modules.vimwiki')                   -- ~/.config/nvim/lua/config_modules/vimwiki/init.lua

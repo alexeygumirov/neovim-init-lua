@@ -8,6 +8,7 @@ nmap('<leader>aC', '<cmd>setlocal formatoptions=cro<CR>')
 
 ----------------------- Conceal level -----------------------------
 nmap('<leader>c','<cmd>lua require("config_modules.conceal").toggle_conceal()<CR>')
+nmap('<leader>cs','<cmd>lua require("alex.config_select").get_config()<CR>')
 
 
 ----------------------- CTags panel -------------------------------
@@ -23,7 +24,7 @@ nmap('<leader>ts', '<cmd>LeadingSpaceToggle<CR>')
 
 
 ----------------------- FZF Files ---------------------------------
-nmap('<leader>fs', '<cmd>Files<CR>')
+-- nmap('<leader>fs', '<cmd>Files<CR>')
 
 
 ----------------------- List mode ---------------------------------
@@ -73,7 +74,7 @@ nmap('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
 -- Telescope: File Browser
 nmap('<leader>ff', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 -- Telescope: File Fuzzy Finders
--- nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })<CR>')
+nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 nmap('<leader>fh', '<cmd>lua require("telescope.builtin").find_files({ cwd = "~/" })<CR>')
 -- Telescope: Open Old Files
 nmap('<leader>fo', '<cmd>lua require("telescope.builtin").oldfiles()<CR>')
