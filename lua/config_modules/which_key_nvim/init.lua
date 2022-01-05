@@ -62,19 +62,19 @@ wk.setup({
     })
 
 wk.register({
+        [","] = {
+            name = "Buffers",
+            d = "Bclose",
+            h = "First buffer",
+            j = "Previous buffer",
+            k = "Next buffer",
+            l = "Last buffer",
+        },
         ["<leader>"] = {
             a = {
                 name = "Autocommenting",
                 c  = "Autocommenting Off",
                 C  = "Autocommenting On",
-            },
-            b = {
-                name = "Buffers",
-                d  = "Bclose",
-                f  = "First buffer",
-                l  = "Last buffer",
-                n  = "Next buffer",
-                p  = "Previous buffer",
             },
             B = "Tags Panel",
             c = "Toggle conceal level",

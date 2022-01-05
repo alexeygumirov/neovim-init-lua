@@ -125,10 +125,11 @@ vmap('<leader>y', '"+y')
 -- Relative  numbers toggle
 nmap('<F3>', '<cmd>lua require("config_modules.small_tunings").relative_numbers_toggle()<CR>')
 -- moving between buffers quickly
-nmap('<leader>bn', '<cmd>bnext<CR>')
-nmap('<leader>bp', '<cmd>bprevious<CR>')
-nmap('<leader>bl', '<cmd>blast<CR>')
-nmap('<leader>bf', '<cmd>bfirst<CR>')
+nmap(',k', '<cmd>bnext<CR>')
+nmap(',j', '<cmd>bprevious<CR>')
+nmap(',l', '<cmd>blast<CR>')
+nmap(',h', '<cmd>bfirst<CR>')
+nmap(',d', '<cmd>Bclose<CR>')
 -- Firefox
 nmap('<leader>uu', '<cmd>call jobstart(["firefox","--private-window", expand("<cfile>")], {"detach": v:true})<CR>')
 -- Call Goyo

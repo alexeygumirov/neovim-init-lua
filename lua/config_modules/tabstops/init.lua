@@ -6,6 +6,8 @@ vim.o.softtabstop   = 4
 vim.o.expandtab     = true
 vim.o.smarttab      = true
 
+-- allow toggling between local and default mode
+
 local M = {}
 
 M.expand_tabstops_toggle = function()

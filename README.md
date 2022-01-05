@@ -46,3 +46,32 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
 ![Lua](screenshot/lua_highlight.png)
 
 ![Markdown](screenshot/md_highlight.png)
+
+## Dependencies
+
+### Python
+
+Neovim specific Python tools are installed inside virtual environment.
+
+```sh
+$ python3 -m venv ~/.virtualenv/neovim
+$ source ~/.virtualenv/neovim/bin/activate
+$ pip install pynvim neovim-remote
+$ deactivate
+
+```
+Set up the `g:python3_host_prog` variable in my `lua/config_modules/small_tunings/init.lua`:
+
+```lua
+vim.g.python3_host_prog = '/home/alexgum/.virtualenv/neovim/bin/python3'
+
+```
+
+### Command line tools
+
+- [fd](https://github.com/sharkdp/fd)
+- [fzf](https://github.com/junegunn/fzf)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [ag (silver searcher)](https://github.com/mizuno-as/silversearcher-ag)
+- [lf file manager](https://github.com/gokcehan/lf)
+- [Exuberant Ctags](http://ctags.sourceforge.net/)

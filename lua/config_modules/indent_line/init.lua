@@ -18,6 +18,10 @@ vim.cmd[[
     autocmd FileType vim let g:indentLine_leadingSpaceEnabled = 1
     autocmd FileType yaml let g:indentLine_enabled=1
     autocmd FileType yaml let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType javascript let g:indentLine_enabled=1
+    autocmd FileType javascript let g:indentLine_leadingSpaceEnabled = 1
+    autocmd FileType dashboard let g:indentLine_enabled=0
+    autocmd FileType dashboard let g:indentLine_leadingSpaceEnabled = 0
 ]]
 -- autocmd FileType markdown let g:indentLine_enabled=1
 -- autocmd FileType vimwiki let g:indentLine_enabled=1

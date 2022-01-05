@@ -94,12 +94,12 @@ require('lspconfig').terraformls.setup({
 vim.cmd([[
     autocmd FileType * lua require('cmp').setup.buffer { enabled = false }
     autocmd FileType python lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType markdown lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType markdown lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
     autocmd FileType javascript lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType sh lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType go lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType vim lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
     autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType lua lua require('cmp').setup.buffer { enabled = true }

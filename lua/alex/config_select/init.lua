@@ -14,7 +14,7 @@ local configs_list = {
     '~/.config/alacritty/alacritty.yml',
     '~/.config/starship/starship.toml',
     '~/.tmux.conf',
-    '~/.xinitrc',
+    '~/.xprofile',
     '~/.Xresources',
 }
 
