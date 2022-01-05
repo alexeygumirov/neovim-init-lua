@@ -50,23 +50,23 @@ M.spellcheck_toggle = function()
 
     if vim.o.spell == false and changed == false then
         vim.o.spell = true
-        vim.o.spelllang = "en_us"
+        vim.bo.spelllang = "en_us"
         print('Spell check: English (US).')
         changed = true
     end
 
     if vim.o.spell == true and changed == false then
-        if vim.o.spelllang == "en_us" and changed == false then
-            vim.o.spelllang = "de_de"
+        if vim.bo.spelllang == "en_us" and changed == false then
+            vim.bo.spelllang = "de_de"
             print('Spell check: Deutsch (DE).')
             changed = true
         end
-        if vim.o.spelllang == "de_de" and changed == false then
-            vim.o.spelllang = "ru_ru"
+        if vim.bo.spelllang == "de_de" and changed == false then
+            vim.bo.spelllang = "ru_ru"
             print('Spell check: Русский (RU).')
             changed = true
         end
-        if vim.o.spelllang == "ru_ru" and changed == false then
+        if vim.bo.spelllang == "ru_ru" and changed == false then
             vim.o.spell = false
             print('Spell check: OFF.')
             changed = true
