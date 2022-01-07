@@ -93,6 +93,7 @@ wk.register({
             f = {
                 name = "Telescope",
                 b  = "Switch buffers",
+                c  = "Ctags search",
                 f  = "Telescope File browser",
                 h  = "FZF in the home folder",
                 o  = "Telescope Old files",
@@ -103,6 +104,8 @@ wk.register({
                 b  = "Git-checkout Branch with FZF",
                 c  = "Git commits with FZF",
                 f  = "Git List-Files with FZF",
+                s  = "Git status",
+                t  = "Tmux sessions",
             },
             G = "Toggle Goyo",
             h = {

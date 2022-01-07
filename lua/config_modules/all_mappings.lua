@@ -23,6 +23,9 @@ nmap('<leader>ti', '<cmd>IndentLinesToggle<CR>')
 nmap('<leader>ts', '<cmd>LeadingSpaceToggle<CR>')
 
 
+----------------------- Git status ---------------------------------
+ nmap('<leader>gs', '<cmd>Git<CR>')
+
 ----------------------- FZF Files ---------------------------------
 -- nmap('<leader>fs', '<cmd>Files<CR>')
 
@@ -67,6 +70,10 @@ nmap('<leader>lw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
 ----------------------- Tabstops ----------------------------------
 nmap('<F9>', '<cmd>lua require("config_modules.tabstops").expand_tabstops_toggle()<CR>')
 
+
+----------------------- Tmux popup --------------------------------
+-- Depends on https://github.com/alexeygumirov/tmux-session-manager 
+nmap('<leader>gt', '<cmd>silent ! tmux popup -E "tmux-session-manager.py"<CR>')
 
 ----------------------- Telescope ---------------------------------
 -- Telescope: Buffers

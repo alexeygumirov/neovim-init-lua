@@ -41,10 +41,8 @@ cmp.setup({
         -- { name = 'snippy' }, -- For snippy users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
-    }, {
         { name = 'buffer' },
-    }, {
-        { name = 'cmdline' }
+        { name = 'cmdline' },
     },
 })
 
@@ -101,6 +99,6 @@ vim.cmd([[
     autocmd FileType vim lua require('cmp').setup.buffer { enabled = true }
     autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
     autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true }
+    autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true , source = { { name = 'path' }, { name = 'nvim_lsp' }, { name = 'buffer' }, { name = 'cmdline' } }}
     autocmd FileType lua lua require('cmp').setup.buffer { enabled = true }
 ]])

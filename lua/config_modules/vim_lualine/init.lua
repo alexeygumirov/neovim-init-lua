@@ -51,7 +51,7 @@ require('lualine').setup({
             'buffers',
             show_filenames_only = true,
             show_modified_status = true,
-            mode = 2,
+            mode = 0,
             buffers_color = {
                 -- Same values like general color option can be used here.
                 active = { fg = '#092236', bg =  '#82aaff' }, -- color for active buffer
