@@ -15,7 +15,7 @@ M.find_files_or_git_files = function()
     if ret == 0 then
         builtin.git_files()
     else
-        builtin.find_files({ cwd = utils.buffer_dir() })
+        builtin.find_files()
     end
 end
 
@@ -42,7 +42,7 @@ M.git_branches = function()
     }
     if ret == 0 then
         builtin.git_branches({ cwd = utils.buffer_dir() })
-        vim.cmd('redrawt')
+        vim.cmd('mode')
     end
 end
 

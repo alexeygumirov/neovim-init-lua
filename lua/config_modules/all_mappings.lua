@@ -81,7 +81,7 @@ nmap('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
 -- Telescope: File Browser
 nmap('<leader>ff', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 -- Telescope: File Fuzzy Finders
-nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })<CR>')
+nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files()<CR>')
 nmap('<leader>fh', '<cmd>lua require("telescope.builtin").find_files({ cwd = "~/" })<CR>')
 -- Telescope: Open Old Files
 nmap('<leader>fo', '<cmd>lua require("telescope.builtin").oldfiles()<CR>')
