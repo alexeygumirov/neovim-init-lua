@@ -1,3 +1,21 @@
+local function spellstatus()
+    if vim.o.spell == true then
+        if vim.bo.spelllang == nil then
+            return ""
+        elseif vim.bo.spelllang == "en_us" then
+            return "[EN]"
+        elseif vim.bo.spelllang == "de_de" then
+            return "[DE]"
+        elseif vim.bo.spelllang == "ru_ru" then
+            return "[RU]"
+        end
+    elseif vim.o.spell == nil then
+        return ""
+    elseif vim.o.spell == false then
+        return ""
+    end
+end
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
@@ -8,7 +26,7 @@ require('lualine').setup({
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = {'mode', spellstatus },
     lualine_b = {
         'branch',
         {
