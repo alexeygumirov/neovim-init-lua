@@ -7,7 +7,7 @@ Plug('neovimhaskell/haskell-vim')
 Plug('tpope/vim-surround')
 Plug('Yggdroot/indentLine')
 Plug('mhinz/vim-signify')
-Plug('tpope/vim-commentary')
+Plug('numToStr/Comment.nvim')
 -- Vsnip
 Plug('hrsh7th/vim-vsnip')
 Plug('hrsh7th/vim-vsnip-integ')

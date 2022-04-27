@@ -11,9 +11,9 @@ cmp.setup({
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
     end,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    winhighlight = "Normal:#51A266,NormalNC:#0C0C0C",
+  window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
   },
   formatting = {
     format = lspkind.cmp_format({with_text = true, maxwidth = 50})
@@ -34,31 +34,36 @@ cmp.setup({
     -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
   },
-  sources =  {
+  sources =  cmp.config.sources({
         { name = 'vsnip' }, -- For vsnip users.
-        { name = 'path' },
         { name = 'nvim_lsp' },
         -- { name = 'snippy' }, -- For snippy users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         { name = 'buffer' },
         { name = 'cmdline' },
-    },
+    }),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
+    mapping = cmp.mapping.preset.cmdline(),
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    sources = cmp.config.sources({
+      { name = 'buffer' }
+    })
 })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
     -- completion = { autocomplete = false },
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      winhighlight = "Normal:#51A266,NormalNC:#0C0C0C",
+    mapping = cmp.mapping.preset.cmdline(),
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     sources = cmp.config.sources({
       { name = 'path' }
