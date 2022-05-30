@@ -26,12 +26,7 @@ cmp.setup({
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
+    ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- default mapping
   },
   sources =  cmp.config.sources({
@@ -40,8 +35,10 @@ cmp.setup({
         -- { name = 'snippy' }, -- For snippy users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
+    },{
         { name = 'buffer' },
-        { name = 'cmdline' },
+        -- { name = 'cmdline' },
+        { name = 'path' },
     }),
 })
 
@@ -94,16 +91,16 @@ require('lspconfig').terraformls.setup({
   capabilities = capabilities
 })
 
-vim.cmd([[
-    autocmd FileType * lua require('cmp').setup.buffer { enabled = false }
-    autocmd FileType python lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType markdown lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
-    autocmd FileType javascript lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType sh lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType go lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType vim lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
-    autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
-    autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true , source = { { name = 'path' }, { name = 'nvim_lsp' }, { name = 'buffer' }, { name = 'cmdline' } }}
-    autocmd FileType lua lua require('cmp').setup.buffer { enabled = true }
-]])
+-- vim.cmd([[
+--     autocmd FileType * lua require('cmp').setup.buffer { enabled = false }
+--     autocmd FileType python lua require('cmp').setup.buffer { enabled = true }
+--     autocmd FileType markdown lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
+--     autocmd FileType javascript lua require('cmp').setup.buffer { enabled = true }
+--     autocmd FileType sh lua require('cmp').setup.buffer { enabled = true }
+--     autocmd FileType go lua require('cmp').setup.buffer { enabled = true }
+--     autocmd FileType vim lua require('cmp').setup.buffer { enabled = true }
+--     autocmd FileType yaml lua require('cmp').setup.buffer { enabled = true, sources = { {name = 'buffer'}, {name = 'path'} }}
+--     autocmd FileType haskell lua require('cmp').setup.buffer { enabled = true }
+--     autocmd FileType terraform lua require('cmp').setup.buffer { enabled = true , source = { { name = 'path' }, { name = 'nvim_lsp' }, { name = 'buffer' }, { name = 'cmdline' } }}
+--     autocmd FileType lua lua require('cmp').setup.buffer { enabled = true }
+-- ]])

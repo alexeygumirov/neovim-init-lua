@@ -39,3 +39,5 @@ imap('<A-l>', '<C-\\><C-N><C-w>l')
 -- Sending last deleated symbol into Void buffer
 nmap('x', '"_x')
 nmap('X', '"_x')
+nmap('ч', '"_x')
+nmap('Ч', '"_x')

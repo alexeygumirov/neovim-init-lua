@@ -16,7 +16,7 @@ Plug('rafamadriz/friendly-snippets')
 Plug('vimwiki/vimwiki')
 -- { integration with lf
 Plug('rbgrouleff/bclose.vim')
-Plug('ptzz/lf.vim')
+-- Plug('ptzz/lf.vim')
 Plug('voldikss/vim-floaterm') -- wrapper for floating window
 -- }
 -- { Git

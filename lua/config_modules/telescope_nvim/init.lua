@@ -81,6 +81,7 @@ require('telescope').setup({
         },
         file_browser = { -- theme = 'horizontal',
             hidden = true,
+            grouped = true,
             sorting_strategy = 'ascending',
             layout_config = {
                 prompt_position = 'top',

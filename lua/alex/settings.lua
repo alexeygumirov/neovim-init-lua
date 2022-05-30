@@ -29,6 +29,5 @@ vim.cmd[[
     syntax on
     filetype indent on
     filetype plugin on
-    nnoremap <leader>o :Lf<CR>
 ]]
 

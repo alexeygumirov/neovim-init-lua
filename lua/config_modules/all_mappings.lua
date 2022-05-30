@@ -34,7 +34,7 @@ nmap('<leader>ts', '<cmd>LeadingSpaceToggle<CR>')
 nmap('<F8>', '<cmd>lua require("config_modules.listmode").list_mode_toggle()<CR>')
 
 ----------------------- Vim-Lf ------------------------------------
-nmap('<leader>o', '<cmd>LfCurrentDirectory<CR>')
+-- nmap('<leader>o', '<cmd>LfCurrentDirectory<CR>')
 
 
 ----------------------- Minimap -----------------------------------
@@ -79,7 +79,7 @@ nmap('<leader>gt', '<cmd>silent ! tmux popup -E "tmux-session-manager.py"<CR>')
 -- Telescope: Buffers
 nmap('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
 -- Telescope: File Browser
-nmap('<leader>ff', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>')
+nmap('<leader>o', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 -- Telescope: File Fuzzy Finders
 nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files()<CR>')
 nmap('<leader>fh', '<cmd>lua require("telescope.builtin").find_files({ cwd = "~/" })<CR>')

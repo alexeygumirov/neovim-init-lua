@@ -14,7 +14,7 @@ require('config_modules.gitgutter')                 -- ~/.config/nvim/lua/config
 require('config_modules.glow')                      -- ~/.config/nvim/lua/config_modules/glow/init.lua
 require('config_modules.haskell_vim')               -- ~/.config/nvim/lua/config_modules/haskell_vim/init.lua
 require('config_modules.indent_line')               -- ~/.config/nvim/lua/config_modules/indent_line/init.lua
-require('config_modules.lf')                        -- ~/.config/nvim/lua/config_modules/lf/init.lua
+-- require('config_modules.lf')                        -- ~/.config/nvim/lua/config_modules/lf/init.lua
 require('config_modules.listmode')                  -- ~/.config/nvim/lua/config_modules/listmode/init.lua
 require('config_modules.lsp_signature')             -- ~/.config/nvim/lua/config_modules/lsp_signature/init.lua
 require('config_modules.minimap')                   -- ~/.config/nvim/lua/config_modules/minimap/init.lua
