@@ -16,7 +16,6 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
 - Highlighting via [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Start up [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [FZF](https://github.com/junegunn/fzf.vim) for search
-- Integration with [Lf file manager](https://github.com/gokcehan/lf)
 - Floating terminal window via [Floaterm](https://github.com/voldikss/vim-floaterm)
 - [Firenvim](https://github.com/glacambre/firenvim) support for integration with a Firefox (or Chrome).
 - Status line and tab line with [Lualine](https://github.com/nvim-lualine/lualine.nvim)
