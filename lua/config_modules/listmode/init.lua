@@ -5,7 +5,7 @@ vim.wo.list      = false
 
 local M = {}
 
-M.list_mode_toggle = function()
+function M.list_mode_toggle()
     
     local changed = false
 

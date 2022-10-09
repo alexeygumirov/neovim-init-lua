@@ -7,6 +7,7 @@ Plug('neovimhaskell/haskell-vim')
 Plug('tpope/vim-surround')
 Plug('Yggdroot/indentLine')
 Plug('mhinz/vim-signify')
+-- Comments
 Plug('numToStr/Comment.nvim')
 -- Vsnip
 Plug('hrsh7th/vim-vsnip')
@@ -20,7 +21,8 @@ Plug('rbgrouleff/bclose.vim')
 Plug('voldikss/vim-floaterm') -- wrapper for floating window
 -- }
 -- { Git
-Plug('airblade/vim-gitgutter')
+-- Plug('airblade/vim-gitgutter')
+Plug('lewis6991/gitsigns.nvim')
 Plug('tpope/vim-fugitive')
 -- }
 Plug('dhruvasagar/vim-table-mode')
@@ -28,7 +30,7 @@ Plug('junegunn/goyo.vim')
 Plug('jiangmiao/auto-pairs')
 Plug('folke/which-key.nvim')
 Plug('ellisonleao/glow.nvim')
-Plug('preservim/tagbar') -- Ctags
+Plug('simrat39/symbols-outline.nvim')
 Plug('wfxr/minimap.vim') -- VIM Code Minimap. Requires https://github.com/wfxr/code-minimap
 
 -- Autocompletion
@@ -75,6 +77,8 @@ Plug('nvim-treesitter/nvim-treesitter', {
         vim.cmd('TSUpdate')
     end
 })
+Plug('nvim-treesitter/nvim-treesitter-textobjects')
+Plug('nvim-treesitter/nvim-treesitter-refactor')
 -- colorizer
 Plug('norcalli/nvim-colorizer.lua')
 

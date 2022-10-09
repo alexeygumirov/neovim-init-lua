@@ -20,7 +20,7 @@ require('telescope').setup({
             }
         },
         path_display = { truncate = 3 },
-        file_ignore_patterns = { ".git/", ".go/" },
+        -- file_ignore_patterns = { ".git/", ".go/" },
         vimgrep_arguments = {
             "rg",
             "--color=never",

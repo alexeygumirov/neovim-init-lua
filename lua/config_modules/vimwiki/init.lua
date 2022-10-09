@@ -14,7 +14,7 @@ vim.g.vimwiki_listsyms = " ⅓⅔◉✓"
 
 local M = {}
 
-M.vimwiki_pull = function()
+function M.vimwiki_pull()
     
     vim.cmd('cd ~/vimwiki')
     vim.cmd('Git pull')
@@ -23,7 +23,7 @@ M.vimwiki_pull = function()
 end
 
 
-M.vimwiki_push = function()
+function M.vimwiki_push()
 
     local timestamp = os.date("on %d %b %Y at %X")
     vim.cmd('cd ~/vimwiki')

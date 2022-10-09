@@ -41,7 +41,7 @@ local opts = {
 
 local M = {}
 
-M.get_config = function()
+function M.get_config()
     pickers.new(opts):find()
 end
 

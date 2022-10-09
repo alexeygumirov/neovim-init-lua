@@ -1,8 +1,8 @@
 local opt = vim.opt
 
-opt.termguicolors  = true
-opt.autoindent     = true
-opt.compatible     = false
+opt.termguicolors   = true
+opt.autoindent      = true
+opt.compatible      = false
 opt.inccommand      = "split"
 opt.encoding        = "utf-8"
 opt.path            = vim.opt.path + ".,**"
@@ -22,8 +22,10 @@ opt.hidden          = true
 opt.langmap         = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 opt.splitbelow      = true
 opt.splitright      = true
-opt.completeopt     = "menu,preview"
+opt.completeopt     = "menu,preview,longest,noinsert"
 opt.autochdir       = true
+opt.cmdheight       = 0
+opt.syntax          = "on"
 
 vim.cmd[[
     syntax on
@@ -31,3 +33,62 @@ vim.cmd[[
     filetype plugin on
 ]]
 
+vim.api.nvim_create_autocmd('FileType', {
+	desc = 'Format on write using LSP server',
+	pattern = {
+        'python',
+        'lua',
+        'yaml',
+        'haskell',
+        'json',
+        'css',
+        'javascript',
+        'typescript',
+        'terraform',
+        'html',
+    },
+	group = vim.api.nvim_create_augroup('format_on_save', { clear = true }),
+	callback = function(opts)
+		vim.api.nvim_create_autocmd('BufWritePre', {
+			buffer = opts.buf,
+            command = "silent! lua vim.lsp.buf.format({async=false})"
+		})
+	end,
+})
+
+
+vim.api.nvim_create_autocmd('FileType', {
+	desc = 'Function name in the Winbar',
+	pattern = {
+        'python',
+        'lua',
+        'haskell',
+        'javascript',
+        'typescript',
+        "sh",
+    },
+	group = vim.api.nvim_create_augroup('winbar_function', { clear = true }),
+	callback = function(opts)
+		vim.api.nvim_create_autocmd(
+            { "CursorMoved", "BufAdd", "BufNew", "WinScrolled" },
+            {
+                buffer = opts.buf,
+                callback = function()
+                    local winbar_filetype_exclude = {
+                        "help",
+                        "dashboard",
+                        "Telescope",
+                        "nofile",
+                        'Outline',
+                        "TelescopePrompt",
+                    }
+                    if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype)
+                    then
+                        vim.opt_local.winbar = nil
+                        return
+                    end
+                    require('config_modules.treesitter').winbar_update()
+                end,
+		})
+	end,
+})

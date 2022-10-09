@@ -1,4 +1,4 @@
-vim.g.firenvim_config = { 
+vim.g.firenvim_config = {
     globalSettings = { alt = "all" },
     localSettings = {
         [".*"] = {

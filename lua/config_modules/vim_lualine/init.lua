@@ -16,6 +16,39 @@ local function spellstatus()
     end
 end
 
+local function get_lsp_name()
+
+    local separators = {
+        left = '',
+        right = '',
+    }
+    local raw_output = vim.lsp.buf_get_clients(vim.api.nvim_buf_get_number(0))
+
+    local lsp_server_name = ""
+
+    if raw_output ~= nil
+    then
+        local count = 0
+        for k, v in pairs(raw_output)
+        do
+            if count == 0 and v.name ~= nil and v.name ~= ""
+            then
+                lsp_server_name = separators.left .. " LSP: " .. v.name
+            else
+                lsp_server_name = lsp_server_name .. ", " .. v.name
+            end
+            count = count + 1
+        end
+        if lsp_server_name ~= ""
+        then
+            lsp_server_name = lsp_server_name .. " " .. separators.left
+        end
+    end
+
+    return lsp_server_name
+
+end
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
@@ -24,6 +57,7 @@ require('lualine').setup({
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode', spellstatus },
@@ -36,6 +70,7 @@ require('lualine').setup({
         }
     },
     lualine_c = {
+        { get_lsp_name },
         -- {
         --     'buffers',
         --     show_filenames_only = false,

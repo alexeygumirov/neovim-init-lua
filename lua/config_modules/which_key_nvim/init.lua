@@ -76,19 +76,19 @@ wk.register({
                 c  = "Autocommenting Off",
                 C  = "Autocommenting On",
             },
-            B = "Tags Panel",
             c = "Toggle conceal level",
             C = {
                 name = "Completion",
                 e  =  "Completion enable",
                 d  =  "Completion disable",
             },
-            d = "Insert Sha256 hash from the date",
             e = {
                 name = "NetRw file explorer",
                 a  = "NetRw tree",
+                c  = "Edit configs",
                 d  = "NetRw in the current directory",
                 g  = "NetRw Git root directory",
+                s  = "Edit scripts",
             },
             f = {
                 name = "Telescope",
@@ -103,7 +103,9 @@ wk.register({
                 name = "Git",
                 b  = "Git-checkout Branch with FZF",
                 c  = "Git commits with FZF",
+                d  = "LazyGit Dotfiles",
                 f  = "Git List-Files with FZF",
+                g  = "LazyGit",
                 s  = "Git status",
                 t  = "Tmux sessions",
             },
@@ -147,6 +149,7 @@ wk.register({
                 o  = "Generate ODT from MD",
             },
             L = "CD into the buffer folder",
+            o = "Telescope File browser",
             p = "Paste below from + buffer",
             P = "Paste above from + buffer",
             r = {
@@ -160,6 +163,7 @@ wk.register({
             },
             s = {
                 name = "Splits",
+                o  = "Symbols Outline Panel",
                 v  = "Switch to vertical Split",
                 h  = "Switch to Horizontal Split",
             },
@@ -178,6 +182,7 @@ wk.register({
             y = "Copy into the * buffer",
             u = {
                 name = "Utils",
+                h  = "insert date hash SHA",
                 u  = "Open URL in Firefox",
             },
             w = {

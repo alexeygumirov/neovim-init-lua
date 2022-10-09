@@ -13,6 +13,7 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
     - Use of built in NeoVIM LSP client
     - `nvim-cmp` for completion.
     - `nvim-lspconfig` for LSP servers configurations.
+    - Configuration for the following language servers: `bashls`, `yaml-language-server`, `terraform-lsp`, `pylsp` and `pyright`, ...
 - Highlighting via [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Start up [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [FZF](https://github.com/junegunn/fzf.vim) for search
@@ -21,8 +22,10 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
 - Status line and tab line with [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - Indentation via [IndentLine](https://github.com/Yggdroot/indentLine)
 - [Auto paring](https://github.com/Yggdroot/indentLine) for brackets, quotations, tags and other defined patters
-- Gitgutter, Fugitive for working with Git.
+- Gitsigns, Fugitive and integration with LazyGit for GIT.
+- Treesitter
 - VimWiki
+
 
 ## Screenshots
 
@@ -72,5 +75,4 @@ vim.g.python3_host_prog = '/home/alexgum/.virtualenv/neovim/bin/python3'
 - [fzf](https://github.com/junegunn/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [ag (silver searcher)](https://github.com/mizuno-as/silversearcher-ag)
-- [lf file manager](https://github.com/gokcehan/lf)
 - [Exuberant Ctags](http://ctags.sourceforge.net/)

@@ -8,15 +8,17 @@ nmap('<leader>aC', '<cmd>setlocal formatoptions=cro<CR>')
 
 ----------------------- Conceal level -----------------------------
 nmap('<leader>c','<cmd>lua require("config_modules.conceal").toggle_conceal()<CR>')
-nmap('<leader>cs','<cmd>lua require("alex.config_select").get_config()<CR>')
 
 
 ----------------------- CTags panel -------------------------------
 nmap('<leader>B', '<cmd>TagbarToggle<CR>')
 
 ----------------------- Dashboard ---------------------------------
-nmap('<F2>', '<cmd>call dashboard#instance(0)<CR>')
+nmap('<F2>', '<cmd>Dashboard<CR>')
 
+----------------------- Edit configs ------------------------------
+nmap('<leader>ec','<cmd>lua require("alex.config_select").get_config()<CR>')
+nmap('<leader>es', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = "~/.scripts" })<CR>')
 
 ----------------------- Indent Line -------------------------------
 nmap('<leader>ti', '<cmd>IndentLinesToggle<CR>')
@@ -24,7 +26,11 @@ nmap('<leader>ts', '<cmd>LeadingSpaceToggle<CR>')
 
 
 ----------------------- Git status ---------------------------------
- nmap('<leader>gs', '<cmd>Git<CR>')
+nmap('<leader>gs', '<cmd>Git<CR>')
+
+----------------------- Git - Lazygit -----------------------------
+nmap('<leader>gg', '<cmd>lua require("alex.lazygit").launch_lazygit()<CR>')
+nmap('<leader>gd', '<cmd>FloatermNew --title=LazyGitDotFiles lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME<CR>')
 
 ----------------------- FZF Files ---------------------------------
 -- nmap('<leader>fs', '<cmd>Files<CR>')
@@ -66,14 +72,16 @@ nmap('<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>')
 nmap('<leader>ly', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 nmap('<leader>lw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
 
+----------------------- Symbols Outline ---------------------------
+nmap('<leader>so', '<cmd>SymbolsOutline<CR>')
 
 ----------------------- Tabstops ----------------------------------
 nmap('<F9>', '<cmd>lua require("config_modules.tabstops").expand_tabstops_toggle()<CR>')
 
 
 ----------------------- Tmux popup --------------------------------
--- Depends on https://github.com/alexeygumirov/tmux-session-manager 
-nmap('<leader>gt', '<cmd>silent ! tmux popup -E "tmux-session-manager.py"<CR>')
+-- Depends on ~/.scripts/python/tsman
+nmap('<leader>gt', '<cmd>silent ! tmux popup -E "tsman"<CR>')
 
 ----------------------- Telescope ---------------------------------
 -- Telescope: Buffers
@@ -132,10 +140,10 @@ vmap('<leader>y', '"+y')
 -- Relative  numbers toggle
 nmap('<F3>', '<cmd>lua require("config_modules.small_tunings").relative_numbers_toggle()<CR>')
 -- moving between buffers quickly
-nmap(',k', '<cmd>bnext<CR>')
-nmap(',j', '<cmd>bprevious<CR>')
-nmap(',l', '<cmd>blast<CR>')
-nmap(',h', '<cmd>bfirst<CR>')
+nmap(',k', '<cmd>bnext|cd %:p:h<CR>')
+nmap(',j', '<cmd>bprevious|cd %:p:h<CR>')
+nmap(',l', '<cmd>blast|cd %:p:h<CR>')
+nmap(',h', '<cmd>bfirst|cd %:p:h<CR>')
 nmap(',d', '<cmd>Bclose<CR>')
 -- Firefox
 nmap('<leader>uu', '<cmd>call jobstart(["firefox","--private-window", expand("<cfile>")], {"detach": v:true})<CR>')

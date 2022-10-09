@@ -10,7 +10,7 @@ vim.o.smarttab      = true
 
 local M = {}
 
-M.expand_tabstops_toggle = function()
+function M.expand_tabstops_toggle()
 
 	local changed = false
     if vim.o.expandtab == false and changed == false

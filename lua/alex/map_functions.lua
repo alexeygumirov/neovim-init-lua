@@ -1,26 +1,26 @@
 local M = {}
 
-M.nmap = function(lhs, rhs)
+function M.nmap(lhs, rhs)
   local options = { noremap = true, silent = true }
   vim.api.nvim_set_keymap('n', lhs, rhs, options)
 end
 
-M.imap = function(lhs, rhs)
+function M.imap(lhs, rhs)
   local options = { noremap = true, silent = true }
   vim.api.nvim_set_keymap('i', lhs, rhs, options)
 end
 
-M.vmap = function(lhs,rhs)
+function M.vmap(lhs,rhs)
   local options = { noremap = true, silent = true }
   vim.api.nvim_set_keymap('v', lhs, rhs, options)
 end
 
-M.smap = function(lhs,rhs)
+function M.smap(lhs,rhs)
   local options = { noremap = true, silent = true }
   vim.api.nvim_set_keymap('s', lhs, rhs, options)
 end
 
-M.tmap = function(lhs,rhs)
+function M.tmap(lhs,rhs)
   local options = { noremap = true, silent = true }
   vim.api.nvim_set_keymap('t', lhs, rhs, options)
 end

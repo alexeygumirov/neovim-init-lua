@@ -3,7 +3,7 @@ local builtin = require('telescope.builtin')
 
 local M = {}
 
-M.find_files_or_git_files = function()
+function M.find_files_or_git_files()
 
     vim.cmd('cd %:p:h')
     local _, ret, stderr = utils.get_os_command_output {
@@ -19,7 +19,7 @@ M.find_files_or_git_files = function()
     end
 end
 
-M.git_commits = function()
+function M.git_commits()
 
     vim.cmd('cd %:p:h')
     local _, ret, stderr = utils.get_os_command_output {
@@ -32,7 +32,7 @@ M.git_commits = function()
     end
 end
 
-M.git_branches = function()
+function M.git_branches()
 
     vim.cmd('cd %:p:h')
     local _, ret, stderr = utils.get_os_command_output {

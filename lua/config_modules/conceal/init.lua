@@ -5,7 +5,7 @@ vim.wo.concealcursor = vim.o.concealcursor
 
 local M = {}
 
-M.toggle_conceal = function()
+function M.toggle_conceal()
 
     local changed = false
 
