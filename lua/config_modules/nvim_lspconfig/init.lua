@@ -1,6 +1,7 @@
+require('lspconfig.ui.windows').default_options = { border = "rounded" }
 require('lspconfig').bashls.setup({
     cmd_env = {
-      GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
+        GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
     },
     filetypes = { "sh", "zsh" }
 })
@@ -126,8 +127,8 @@ require('lspconfig').yamlls.setup({
 
 -- #### Autocmd
 vim.api.nvim_create_autocmd('FileType', {
-	desc = 'Omnifunc for LSP',
-	pattern = {
+    desc = 'Omnifunc for LSP',
+    pattern = {
         'python',
         'markdown',
         'javascript',
@@ -140,7 +141,7 @@ vim.api.nvim_create_autocmd('FileType', {
         'terraform',
         'lua'
     },
-	group = vim.api.nvim_create_augroup('lsp_omnifunc_enable', { clear = true }),
+    group = vim.api.nvim_create_augroup('lsp_omnifunc_enable', { clear = true }),
     callback = function(opts)
         buffer = opts.buf
         vim.api.nvim_buf_set_option(buffer, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
