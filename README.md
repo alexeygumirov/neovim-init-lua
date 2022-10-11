@@ -41,6 +41,10 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
 
 ![Completion 3](screenshot/completion3.png)
 
+![Completion 4](screenshot/completion4.png)
+
+![Menu](screenshot/menu.png)
+
 ### Highlight
 
 ![Python](screenshot/python_highlight.png)
