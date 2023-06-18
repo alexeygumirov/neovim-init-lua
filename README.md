@@ -2,8 +2,7 @@
 
 Many NeoVIM users migrate to full Lua config and many need examples of how others done that.
 
-My Neovim config uses [Vim Plug](https://github.com/junegunn/vim-plug) as a plugin manager.
-Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim). But as of today, I am happy with the **VIM Plug**.
+My Neovim config uses [Lazy](https://github.com/folke/lazy.nvim) as a plugin manager.
 
 ## Key features
 
@@ -15,23 +14,17 @@ Maybe later I will migrate to [Packer](https://github.com/wbthomason/packer.nvim
     - `nvim-lspconfig` for LSP servers configurations.
     - Configuration for the following language servers: `bashls`, `yaml-language-server`, `terraform-lsp`, `pylsp` and `pyright`, ...
 - Highlighting via [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Start up [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [FZF](https://github.com/junegunn/fzf.vim) for search
-- Floating terminal window via [Floaterm](https://github.com/voldikss/vim-floaterm)
-- [Firenvim](https://github.com/glacambre/firenvim) support for integration with a Firefox (or Chrome).
+- Floating terminal window via [Toggleterm](https://github.com/akinsho/toggleterm.nvim)
 - Status line and tab line with [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - Indentation via [IndentLine](https://github.com/Yggdroot/indentLine)
-- [Auto paring](https://github.com/Yggdroot/indentLine) for brackets, quotations, tags and other defined patters
+- [Auto paring](https://github.com/jiangmiao/auto-pairs) for brackets, quotations, tags and other defined patters
 - Gitsigns, Fugitive and integration with LazyGit for GIT.
 - Treesitter
 - VimWiki
 
 
 ## Screenshots
-
-### Dashboard
-
-![Dashboard](screenshot/dashboard.png)
 
 ### Completions
 
@@ -80,3 +73,4 @@ vim.g.python3_host_prog = '/home/alexgum/.virtualenv/neovim/bin/python3'
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [ag (silver searcher)](https://github.com/mizuno-as/silversearcher-ag)
 - [Exuberant Ctags](http://ctags.sourceforge.net/)
+- [Lazygit](https://github.com/jesseduffield/lazygit)
