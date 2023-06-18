@@ -1,62 +1,107 @@
 local home = os.getenv('HOME')
 local db = require('dashboard')
 
-db.hide_statusline = false
-db.hide_tagline = true
--- db.preview_command = 'cat | lolcat -F 0.2 -p 1.0 -S 25 -s 100'
--- db.preview_file_path = home .. '/.config/nvim/static/dashboard.cat'
--- db.preview_file_height = 10
--- db.preview_file_width = 50
-db.custom_header = {
-    '',
-    '⠀⠀⠀⢰⣧⠀⠀⠀⠀⠀⠀⠀⠀⣴⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⢿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢿⣿⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⠘⢿⣿⣷⣄⠀⠀⠀⠀⠀⢀⣽⢿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⠀⠈⠻⣿⣿⣷⣄⠀⠀⣰⠟⠁⠀⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⠀⠀⣠⡾⠻⣿⣿⣷⣾⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⢀⣼⡏⠀⠀⠈⠻⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⢸⣿⣧⠀⠀⠀⠀⠈⠻⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⢸⣿⣿⣧⠀⠀⠀⠀⠀⠈⠻⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀',
-    '⠀⠀⠀⢀⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⠀⠀⣰⠂⢦⡀⠀⠀⠀',
-    '⠀⠀⠈⠙⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠃⠀⠀⣿⠀⢸⡇⠀⠀⠀',
-    '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡀⣼⠃⠀⠀⠀',
-    '',
+db.setup({
+    theme = 'doom',
+    config = {
+        header = {
+            '',
+            '⠀⠀⠀⢰⣧⠀⠀⠀⠀⠀⠀⠀⠀⣴⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⢿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢿⣿⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⠘⢿⣿⣷⣄⠀⠀⠀⠀⠀⢀⣽⢿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⠀⠈⠻⣿⣿⣷⣄⠀⠀⣰⠟⠁⠀⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⠀⠀⣠⡾⠻⣿⣿⣷⣾⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⢀⣼⡏⠀⠀⠈⠻⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⢸⣿⣧⠀⠀⠀⠀⠈⠻⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⢸⣿⣿⣧⠀⠀⠀⠀⠀⠈⠻⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            '⠀⠀⠀⢀⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⠀⠀⣰⠂⢦⡀⠀⠀⠀',
+            '⠀⠀⠈⠙⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠃⠀⠀⣿⠀⢸⡇⠀⠀⠀',
+            '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡀⣼⠃⠀⠀⠀',
+            '',
+        },
+        center = {
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'New File                            ',
+                desc_hl = 'DashboardCenter',
+                key = 'n',
+                key_hl = 'DashboardShortCut',
+                action = 'enew!'
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'Find File',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC o',
+                key_hl = 'DashboardShortCut',
+                action = 'lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })',
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'Search text',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC rr',
+                key_hl = 'DashboardShortCut',
+                action = 'lua require("telescope.builtin").live_grep()',
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'Recent files',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC fo',
+                key_hl = 'DashboardShortCut',
+                action = 'lua require("telescope.builtin").oldfiles()',
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'Git Files',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC gf',
+                key_hl = 'DashboardShortCut',
+                action = 'lua require("alex.telescope").find_files_or_git_files()',
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'VimWiki',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC ww',
+                key_hl = 'DashboardShortCut',
+                action = 'VimwikiIndex',
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'My scripts',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC es',
+                key_hl = 'DashboardShortCut',
+                action = 'lua require("telescope").extensions.file_browser.file_browser({ cwd = "~/.scripts" })',
+            },
+            {
+                icon = '  ',
+                icon_hl = 'DashboardCenterIcon',
+                desc = 'Configs',
+                desc_hl = 'DashboardCenter',
+                key = 'SPC ec',
+                key_hl = 'DashboardShortCut',
+                action = 'lua require("alex.config_select").get_config()',
+            },
+
+        },
+        footer = { 'press F2 to call dashboard' }
+    },
+    hide = {
+        statusline = false,
+        tabline = true,
+        winbar = true
     }
-db.custom_center = {
-    {icon = '  ',
-     desc = 'New File                  ',
-     shortcut = '      ',
-     action ='DashboardNewFile'},
-    {icon = '  ',
-     desc = 'Find File                 ',
-     action = 'lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })',
-     shortcut = 'SPC o '},
-    {icon = '  ',
-     desc = 'Search text               ',
-     action = 'lua require("telescope.builtin").live_grep()',
-     shortcut = 'SPC rr'},
-    {icon = '  ',
-     desc = 'Recent files              ',
-     action = 'lua require("telescope.builtin").oldfiles()',
-     shortcut = 'SPC fo'},
-    {icon = '  ',
-     desc = 'Git Files                 ',
-     action = 'lua require("alex.telescope").find_files_or_git_files()',
-     shortcut = 'SPC gf'},
-    {icon = '  ',
-     desc = 'VimWiki                   ',
-     action = 'VimwikiIndex',
-     shortcut = 'SPC ww'},
-    {icon = '  ',
-     desc = 'My scripts                ',
-     action = 'lua require("telescope").extensions.file_browser.file_browser({ cwd = "~/.scripts" })',
-     shortcut = 'SPC es'},
-    {icon = '  ',
-     desc = 'Configs                   ',
-     action = 'lua require("alex.config_select").get_config()',
-     shortcut = 'SPC ec'},
-    }
-db.custom_footer = { '', '', 'press F2 to call dashboard' }
+})
 
 -- DashboardHeader DashboardCenter DashboardCenterIcon DashboardShortCut DashboardFooter
 vim.cmd([[

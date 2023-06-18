@@ -1,5 +1,6 @@
 local nmap = require('alex.map_functions').nmap
 local vmap = require('alex.map_functions').vmap
+local imap = require('alex.map_functions').imap
 
 ----------------------- Autocommenting ----------------------------
 nmap('<leader>ac', '<cmd>setlocal formatoptions-=cro<CR>')
@@ -7,17 +8,17 @@ nmap('<leader>aC', '<cmd>setlocal formatoptions=cro<CR>')
 
 
 ----------------------- Conceal level -----------------------------
-nmap('<leader>c','<cmd>lua require("config_modules.conceal").toggle_conceal()<CR>')
+nmap('<leader>c', '<cmd>lua require("config_modules.conceal").toggle_conceal()<CR>')
 
 
 ----------------------- CTags panel -------------------------------
-nmap('<leader>B', '<cmd>TagbarToggle<CR>')
+-- nmap('<leader>B', '<cmd>TagbarToggle<CR>')
 
 ----------------------- Dashboard ---------------------------------
 nmap('<F2>', '<cmd>Dashboard<CR>')
 
------------------------ Edit configs ------------------------------
-nmap('<leader>ec','<cmd>lua require("alex.config_select").get_config()<CR>')
+----------------------- Edit config -------------------------------
+nmap('<leader>ec', '<cmd>lua require("alex.config_select").get_config()<CR>')
 nmap('<leader>es', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = "~/.scripts" })<CR>')
 
 ----------------------- Indent Line -------------------------------
@@ -25,16 +26,15 @@ nmap('<leader>ti', '<cmd>IndentLinesToggle<CR>')
 nmap('<leader>ts', '<cmd>LeadingSpaceToggle<CR>')
 
 
------------------------ Git status ---------------------------------
+----------------------- Git status --------------------------------
 nmap('<leader>gs', '<cmd>Git<CR>')
 
 ----------------------- Git - Lazygit -----------------------------
 nmap('<leader>gg', '<cmd>lua require("alex.lazygit").launch_lazygit()<CR>')
-nmap('<leader>gd', '<cmd>FloatermNew --title=LazyGitDotFiles lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME<CR>')
+nmap('<leader>gd', '<cmd>lua require("alex.lazygit").launch_lazygit_dotfiles()<CR>')
 
 ----------------------- FZF Files ---------------------------------
 -- nmap('<leader>fs', '<cmd>Files<CR>')
-
 
 ----------------------- List mode ---------------------------------
 nmap('<F8>', '<cmd>lua require("config_modules.listmode").list_mode_toggle()<CR>')
@@ -44,10 +44,10 @@ nmap('<F8>', '<cmd>lua require("config_modules.listmode").list_mode_toggle()<CR>
 
 
 ----------------------- Minimap -----------------------------------
-nmap("<leader>``", '<cmd>nohlsearch<CR><cmd>call minimap#vim#ClearColorSearch()<CR>')
-nmap('<leader>mm', '<cmd>MinimapToggle<CR>')
-nmap('<leader>mr', '<cmd>MinimapRefresh<CR>')
-nmap('<leader>mu', '<cmd>MinimapUpdateHighlight<CR>')
+-- nmap("<leader>``", '<cmd>nohlsearch<CR><cmd>call minimap#vim#ClearColorSearch()<CR>')
+-- nmap('<leader>mm', '<cmd>MinimapToggle<CR>')
+-- nmap('<leader>mr', '<cmd>MinimapRefresh<CR>')
+-- nmap('<leader>mu', '<cmd>MinimapUpdateHighlight<CR>')
 
 
 ----------------------- Nvim-cmp ----------------------------------
@@ -56,21 +56,20 @@ nmap('<leader>Cd', '<cmd>lua require("cmp").setup.buffer{ enabled = false }<CR>'
 
 
 ----------------------- NetRw -------------------------------------
-nmap('<leader>eg', '<cmd>lua require("config_modules.netrw").netrw_git_root()<CR>')
-nmap('<leader>ed', '<cmd>Lexplore %:p:h<CR>')
-nmap('<leader>ea', '<cmd>Lexplore<CR>')
+nmap('<leader>nt', '<cmd>NvimTreeToggle<CR>')
+nmap('<leader>ng', '<cmd>lua require("config_modules.nvim_tree").get_git_root()<CR>')
 
 
 ----------------------- Nvim-lspconfig ----------------------------
-nmap('<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>')
-nmap('<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>')
-nmap('<leader>le', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-nmap('<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-nmap('<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-nmap('<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-nmap('<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>')
-nmap('<leader>ly', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
-nmap('<leader>lw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
+-- nmap('<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>')
+-- nmap('<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>')
+-- nmap('<leader>le', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+-- nmap('<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+-- nmap('<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+-- nmap('<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+-- nmap('<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>')
+-- nmap('<leader>ly', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+-- nmap('<leader>lw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
 
 ----------------------- Symbols Outline ---------------------------
 nmap('<leader>so', '<cmd>SymbolsOutline<CR>')
@@ -81,13 +80,14 @@ nmap('<F9>', '<cmd>lua require("config_modules.tabstops").expand_tabstops_toggle
 
 ----------------------- Tmux popup --------------------------------
 -- Depends on ~/.scripts/python/tsman
-nmap('<leader>gt', '<cmd>silent ! tmux popup -E "tsman"<CR>')
+nmap('<leader>gt', '<cmd>silent ! tmux display-popup -w 50 -h 20 -E "tsman"<CR>')
 
 ----------------------- Telescope ---------------------------------
 -- Telescope: Buffers
 nmap('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
 -- Telescope: File Browser
-nmap('<leader>o', '<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>')
+nmap('<leader>o',
+'<cmd>lua require("telescope").extensions.file_browser.file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>')
 -- Telescope: File Fuzzy Finders
 nmap('<leader>fs', '<cmd>lua require("telescope.builtin").find_files()<CR>')
 nmap('<leader>fh', '<cmd>lua require("telescope.builtin").find_files({ cwd = "~/" })<CR>')
@@ -100,17 +100,22 @@ nmap('<leader>gb', '<cmd>lua require("alex.telescope").git_branches()<CR>')
 nmap('<leader>gf', '<cmd>lua require("alex.telescope").find_files_or_git_files()<CR>')
 nmap('<leader>gc', '<cmd>lua require("alex.telescope").git_commits()<CR>')
 -- Telescope: Grep search in VimWiki
-nmap('<leader>rw', '<cmd>lua require("telescope.builtin").live_grep({ search_dirs = {"~/vimwiki/"} })<CR>')
+nmap('<leader>rw',
+'<cmd>lua require("telescope.builtin").grep_string({ search="", search_dirs = {"~/vimwiki/"}, only_sort_text = true, shorten_path = true })<CR>')
 -- Telescope: Grep search in Git root project (requires fugitive)
-nmap('<leader>rg', '<cmd>Gcd<CR><cmd>lua require("telescope.builtin").live_grep()<CR>')
+nmap('<leader>rg', '<cmd>lua require("alex.telescope.").grep_git_files()<CR>')
 -- Telescope: Grep in home directory
-nmap('<leader>rh', '<cmd>lua require("telescope.builtin").live_grep({ search_dirs = { "~/.scripts", "~/.config" }})<CR>')
+nmap('<leader>rh',
+'<cmd>lua require("telescope.builtin").live_grep({ search_dirs = { "~/.scripts", "~/.config" } , only_sort_text = true })<CR>')
+-- nmap('<leader>rh', '<cmd>lua require("telescope.builtin").grep_string({ search="", search_dirs = { "~/.scripts", "~/.config" } , only_sort_text = true, shorten_path = true })<CR>')
 -- Telescope: Grep in current directory and subdirs
-nmap('<leader>rr', '<cmd>lua require("telescope.builtin").live_grep({ cwd = require("telescope.utils").buffer_dir() })<CR>')
--- Telescope: Grep in opened files (buffers)
-nmap('<leader>rb', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>')
+nmap('<leader>rr',
+'<cmd>lua require("telescope.builtin").grep_string({ search="", cwd = require("telescope.utils").buffer_dir(), only_sort_text = true, shorten_path = true })<CR>')
 -- Telescope: Grep in current file
-nmap('<leader>rl', '<cmd>lua require("telescope.builtin").live_grep({grep_open_files = true})<CR>')
+nmap('<leader>rb', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>')
+-- Telescope: Grep in opened files (buffers)
+nmap('<leader>rl',
+'<cmd>lua require("telescope.builtin").grep_string({ search = "",  grep_open_files = true, only_sort_text = true, shorten_path = true })<CR>')
 
 
 ----------------------- Vim Hop ---------------------------------
@@ -119,16 +124,18 @@ nmap('<leader>jl', '<cmd>HopLine<CR>')
 nmap('<leader>jp', '<cmd>HopPattern<CR>')
 -- Vim-Hop dirty hack. To make my colors work
 vim.cmd[[
-    hi HopNextKey guifg=#d70000
-    hi HopNextKey1 guifg=#d75f00
-    hi HopNextKey2 guifg=#ffffaf
+hi HopNextKey guifg=#d70000
+hi HopNextKey1 guifg=#d75f00
+hi HopNextKey2 guifg=#ffffaf
 ]]
 
 
 ----------------------- VimWiki ---------------------------------
-nmap('<leader>wg', '<cmd>lua require("config_modules.vimwiki").vimwiki_push()<CR>')
-nmap('<leader>wu', '<cmd>lua require("config_modules.vimwiki").vimwiki_pull()<CR>')
-nmap('<leader>wc', '<cmd>VimwikiTOC<CR>')
+nmap(',wp', '<cmd>lua require("config_modules.vimwiki").vimwiki_pull()<CR>')
+nmap(',wP', '<cmd>lua require("config_modules.vimwiki").vimwiki_push()<CR>')
+-- nmap('<leader>wp', '<cmd>! ~/.scripts/sh/vimwikigit -pull<CR>')
+-- nmap('<leader>wP', '<cmd>! ~/.scripts/sh/vimwikigit -push<CR>')
+nmap(',wc', '<cmd>VimwikiTOC<CR>')
 
 
 ----------------------- Small Tunings -----------------------
@@ -137,6 +144,8 @@ nmap('<leader>p', '"+p')
 nmap('<leader>P', '"+P')
 nmap('<leader>y', '"+yy')
 vmap('<leader>y', '"+y')
+-- Clear search highlighting
+nmap("<leader>``", '<cmd>nohlsearch<CR>')
 -- Relative  numbers toggle
 nmap('<F3>', '<cmd>lua require("config_modules.small_tunings").relative_numbers_toggle()<CR>')
 -- moving between buffers quickly
@@ -175,3 +184,5 @@ nmap('<leader>Md', '<cmd>! bash -c "pdfgenerate -f % -o docx"<CR>')
 nmap('<leader>Mo', '<cmd>! bash -c "pdfgenerate -f % -o odt"<CR>')
 -- Glow for Markdown preview with Glow
 nmap('<leader>Mg', '<cmd>Glow<CR>')
+
+-- nmap('<F10>', '<cmd>lua require("config_modules.small_tunings").get_lsp_name()<CR>')

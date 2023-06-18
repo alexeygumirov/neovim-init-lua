@@ -19,6 +19,23 @@ function M.find_files_or_git_files()
     end
 end
 
+function M.grep_git_files()
+
+    local git_root, ret, stderr = utils.get_os_command_output {
+        "git",
+        "rev-parse",
+        "--show-toplevel",
+    }
+
+    if ret ~= 0
+    then
+        print('Not a GIT directory')
+    else
+        builtin.grep_string({search = "", cwd = git_root[1], only_sort_text = true, word_match = "-w"})
+    end
+
+end
+
 function M.git_commits()
 
     vim.cmd('cd %:p:h')

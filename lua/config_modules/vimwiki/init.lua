@@ -15,9 +15,10 @@ vim.g.vimwiki_listsyms = " ⅓⅔◉✓"
 local M = {}
 
 function M.vimwiki_pull()
-    
+
     vim.cmd('cd ~/vimwiki')
     vim.cmd('Git pull')
+    vim.cmd('cd %:p:h')
     vim.cmd('redrawt')
 
 end
@@ -30,6 +31,7 @@ function M.vimwiki_push()
     vim.cmd('Git add .')
     vim.cmd('Git commit -m ' .. '"update from Home laptop ' .. timestamp .. '"')
     vim.cmd('Git push')
+    vim.cmd('cd %:p:h')
     vim.cmd('redrawt')
 
 end

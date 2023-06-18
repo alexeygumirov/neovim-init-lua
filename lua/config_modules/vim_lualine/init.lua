@@ -29,19 +29,20 @@ local function get_lsp_name()
     if raw_output ~= nil
     then
         local count = 0
-        for k, v in pairs(raw_output) do
+        for k, v in pairs(raw_output)
+        do
             if count == 0 and v.name ~= nil and v.name ~= ""
             then
-                lsp_server_name = v.name
+                lsp_server_name = separators.right .. " " ..  v.name
             else
                 lsp_server_name = lsp_server_name .. ", " .. v.name
             end
             count = count + 1
         end
-        if lsp_server_name ~= ""
-        then
-            lsp_server_name = lsp_server_name .. " " .. separators.left
-        end
+        -- if lsp_server_name ~= ""
+        -- then
+        --     lsp_server_name = lsp_server_name .. " " .. separators.left
+        -- end
     end
 
     return lsp_server_name
@@ -62,25 +63,26 @@ require('lualine').setup({
         lualine_a = { 'mode', spellstatus },
         lualine_b = {
             'branch',
-            get_lsp_name,
-        },
-        lualine_c = {
             {
                 'filename',
-                file_status = false,
-                newfile_status = false,
-                path = 3,
-                shorting_path = 10,
-            }
+                file_status = false,      -- Displays file status (readonly status, modified status)
+                newfile_status = false,   -- Display new file status (new file means no write after created)
+                path = 3,                -- 0: Just the filename
+                shorting_target = 10,
+            },
+        },
+        lualine_c = {
+            -- { get_lsp_name },
             -- {
-            --     'buffers',
-            --     show_filenames_only = false,
-            --     show_modified_status = true,
-            --     mode = 1,
-            -- },
-            -- {'filename'},
+                --     'buffers',
+                --     show_filenames_only = false,
+                --     show_modified_status = true,
+                --     mode = 1,
+                -- },
+                -- {'filename'},
         },
         lualine_x = {
+            get_lsp_name,
             'encoding',
             'fileformat',
             {
@@ -88,14 +90,14 @@ require('lualine').setup({
                 colored = true,
             },
         },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { 'filename' },
-        lualine_x = { 'location' },
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
         lualine_y = {},
         lualine_z = {}
     },
@@ -108,14 +110,21 @@ require('lualine').setup({
                 mode = 0,
                 buffers_color = {
                     -- Same values like general color option can be used here.
-                    active = { fg = '#092236', bg = '#82aaff' }, -- color for active buffer
+                    active = { fg = '#092236', bg =  '#82aaff' }, -- color for active buffer
                     inactive = { fg = '#a1aab8', bg = '#2c3043' },
                 },
             },
         },
-        lualine_b = { 'diff',
-            --{'diagnostics', sources={'nvim_lsp'}}},
-            { 'diagnostics', sources = { 'nvim_diagnostic' } } },
+        lualine_b = {
+            'diff',
+            -- {'diagnostics', sources={'nvim_lsp'}},
+            {
+                'diagnostics',
+                sources = {
+                    'nvim_diagnostic',
+                },
+            },
+        },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},

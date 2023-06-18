@@ -40,4 +40,8 @@ imap('<A-l>', '<C-\\><C-N><C-w>l')
 nmap('x', '"_x')
 nmap('X', '"_x')
 nmap('ч', '"_x')
-nmap('Ч', '"_x')
+nmap('Ч', '"_X')
+
+-- Scrolling up and dowin with centring
+nmap('<C-d>', '<C-d>zz')
+nmap('<C-u>', '<C-u>zz')

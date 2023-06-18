@@ -5,6 +5,9 @@ require('telescope').setup({
         theme = 'dropdown',
         hidden = true,
         sorting_strategy = 'ascending',
+        preview = {
+            treesitter = true,
+        },
         layout_config = {
             prompt_position = 'top',
             height = 0.9,
@@ -19,7 +22,10 @@ require('telescope').setup({
                 ["<C-h>"] = "which_key"
             }
         },
-        path_display = { truncate = 3 },
+        path_display = {
+            truncate = 3,
+            "short",
+        },
         file_ignore_patterns = { "^.git/", "^.go/" },
         vimgrep_arguments = {
             "rg",
@@ -63,6 +69,16 @@ require('telescope').setup({
                 mirror = true,
             },
         },
+        grep_string = {
+            layout_strategy = 'vertical',
+            layout_config = {
+                prompt_position = 'top',
+                preview_height = 0.5,
+                height = 0.9,
+                width = 0.9,
+                mirror = true,
+            },
+        },
         -- picker_name = {
         --   picker_config_key = value,
         --   ...
@@ -73,22 +89,22 @@ require('telescope').setup({
     winblend = 3,
     extensions = {
         fzf = {
-            fuzzy = true, -- false will only do exact matching
-            override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            fuzzy = true,                    -- false will only do exact matching
+            override_generic_sorter = true,  -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
+            case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
         },
         file_browser = { -- theme = 'horizontal',
             hidden = true,
-            grouped = true,
             sorting_strategy = 'ascending',
+            grouped = true,
             layout_config = {
                 prompt_position = 'top',
                 height = 0.9,
                 width = 0.9,
                 mirror = false,
-                preview_width = 0.5,
+                preview_width = 0.65,
             },
         },
         ctags_outline = {

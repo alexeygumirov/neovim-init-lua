@@ -61,7 +61,7 @@ function M.spellcheck_toggle()
 
     local changed = false
 
-    if vim.o.spell == false and changed == false then
+    if (vim.o.spell == false or vim.o.spell == nil) and changed == false then
         vim.o.spell = true
         vim.bo.spelllang = "en_us"
         print('Spell check: English (US).')
