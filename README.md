@@ -1,8 +1,10 @@
 # My Neovim config in Lua
 
-Many NeoVIM users migrate to full Lua config and many need examples of how others done that.
+This is my NeoVIM config.
+NeoVIM version is 0.9.0.
 
-My Neovim config uses [Lazy](https://github.com/folke/lazy.nvim) as a plugin manager.
+I use [Lazy](https://github.com/folke/lazy.nvim) as a plugin manager.
+
 
 ## Key features
 
